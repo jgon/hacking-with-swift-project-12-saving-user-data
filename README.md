@@ -1,4 +1,4 @@
-# Hacking with Swift - Project 12 - UICollectionViews
+# Hacking with Swift - Project 12 - Saving user settings
 
 How to save user settings and data for later use.
 
