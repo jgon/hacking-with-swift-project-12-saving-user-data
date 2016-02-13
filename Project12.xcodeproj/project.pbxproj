@@ -359,9 +359,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Project10Tests/Info.plist;
+				INFOPLIST_FILE = Project12Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = J4SOFT.Project10Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = J4SOFT.Project12Tests;
 				PRODUCT_NAME = Project12;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project12.app/Project12";
 			};
@@ -371,9 +371,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Project10Tests/Info.plist;
+				INFOPLIST_FILE = Project12Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = J4SOFT.Project10Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = J4SOFT.Project12Tests;
 				PRODUCT_NAME = Project12;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project12.app/Project12";
 			};

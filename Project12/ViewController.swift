@@ -16,12 +16,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // Getting back saved data.
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let savedPeople = userDefaults.objectForKey("people") as? NSData {
+            people = NSKeyedUnarchiver.unarchiveObjectWithData(savedPeople) as! [Person]
+        }
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,6 +58,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             let newName = alertController.textFields![0]
             person.name = newName.text!
             self.collectionView.reloadData()
+            self.saveData()
         }))
         
         presentViewController(alertController, animated: true, completion: nil)
@@ -97,12 +98,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.reloadData()
         
         dismissViewControllerAnimated(true, completion: nil)
+        saveData()
     }
     
     func getDocumentsDirectory() -> NSString {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0]
         return documentsDirectory
+    }
+    
+    func saveData() {
+        let savedData = NSKeyedArchiver.archivedDataWithRootObject(people)
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setObject(savedData, forKey: "people")
     }
 }
 
